@@ -3,5 +3,5 @@ with result as
 from netology.CUSTOMERS
 right join netology.ORDERS
 on netology.CUSTOMERS.id = netology.ORDERS.customer_id)
-select * from result
+select product_name from result
 where lower(name) = :name;

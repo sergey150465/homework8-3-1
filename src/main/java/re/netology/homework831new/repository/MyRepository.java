@@ -15,23 +15,26 @@ import java.util.stream.Collectors;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import re.netology.homework831new.requestResult.RequestResult;
 
 @Repository
 public class MyRepository {
     public String script = read("scriptRequest.sql");
 
-    @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+
+    public MyRepository(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
+        this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
+    }
 
     @Transactional
     public List<String> getProductName(String name) {
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("name", name);
-        List<String> results = namedParameterJdbcTemplate.query(
-                script, parameters, (resultSet, rowNum) -> {
-                    String productName = resultSet.getString("product_name");
-                    return productName;
-                });
+
+        NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(
+                namedParameterJdbcTemplate.getJdbcTemplate().getDataSource());
+        List<String> results = template.queryForList(script, parameters, String.class);
         return results;
     }
 

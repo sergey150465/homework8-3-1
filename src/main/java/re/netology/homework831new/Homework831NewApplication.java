@@ -25,6 +25,6 @@ public class Homework831NewApplication implements CommandLineRunner {
 
     public void getByCityAndPrint(String name) {
         var result = myRepository.getProductName(name);
-        System.out.println(result);
+        result.forEach(System.out::println);
     }
 }
