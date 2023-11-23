@@ -1,3 +1,4 @@
+
 with result as
 (select netology.CUSTOMERS.name, netology.ORDERS.product_name
 from netology.CUSTOMERS

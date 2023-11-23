@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import re.netology.homework831new.repository.MyRepository;
 
+
 import java.sql.SQLException;
 
 @AllArgsConstructor

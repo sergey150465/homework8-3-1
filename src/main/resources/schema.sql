@@ -24,7 +24,6 @@ insert into netology.customers (id, name, surname, age, phone_number) values (4,
 insert into netology.customers (id, name, surname, age, phone_number) values (5, 'Vova', 'Pupkin', 38, '3-22-2-77');
 insert into netology.customers (id, name, surname, age, phone_number) values (6, 'Vova', 'Zuzin', 38, '3-22-2-77');
 
-
 insert into netology.orders (id, date, customer_id, product_name, amount)  values (1, '01.01.2023', 2, 'iPhone1', 2);
 insert into netology.orders (id, date, customer_id, product_name, amount)  values (2, '01.01.2023', 3, 'iPhone2', 3);
 insert into netology.orders (id, date, customer_id, product_name, amount)  values (3, '01.01.2023', 1, 'iPhone3', 4);

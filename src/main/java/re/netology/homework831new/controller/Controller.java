@@ -13,7 +13,6 @@ import java.util.List;
 public class Controller {
 
     private final MyRepository myRepository;
-
     @GetMapping("/products/fetch-product")
     public List<String> getProductName(@RequestParam String name) {
         List<String> result = myRepository.getProductName(name);
